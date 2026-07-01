@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "destec",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "public", "-p", "4500"],
+      "port": 4500
+    }
+  ]
+}

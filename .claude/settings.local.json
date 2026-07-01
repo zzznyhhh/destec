@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Claude_Preview__preview_start",
+      "Bash(grep -r \"TODO\\\\|FIXME\\\\|placeholder\\\\|XXX\\\\|HACK\" /Users/macbookair/Desktop/destec --include=*.js --include=*.html)"
+    ]
+  }
+}

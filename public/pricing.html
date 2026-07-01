@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing — DESTEC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="pricing-page">
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner container">
+      <a href="index.html" class="nav-logo"><span class="logo-icon">⬡</span><span class="logo-text">DESTEC</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="generator.html" class="nav-link">Generator</a></li>
+        <li><a href="pricing.html" class="nav-link active">Pricing</a></li>
+        <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-ghost" id="navAuthBtn">Masuk</a>
+        <a href="generator.html" class="btn btn-primary">Coba Gratis</a>
+      </div>
+      <button class="nav-hamburger" id="navHamburger"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="pricing-hero">
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    <div class="container">
+      <div class="section-chip">Harga & Paket</div>
+      <h1 class="section-title">Pilih Paket yang <span class="text-gradient">Tepat Untukmu</span></h1>
+      <p class="section-sub">Mulai gratis, upgrade kapan saja. Tidak ada biaya tersembunyi.</p>
+      <div class="billing-toggle" id="billingToggle">
+        <span class="toggle-label active" id="labelMonthly">Bulanan</span>
+        <button class="toggle-switch" id="toggleSwitch" role="switch" aria-checked="false">
+          <span class="toggle-thumb"></span>
+        </button>
+        <span class="toggle-label" id="labelYearly">Tahunan <span class="discount-badge">Hemat 20%</span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Payment alert -->
+  <div class="container">
+    <div id="paymentAlert" class="payment-alert" style="display:none"></div>
+  </div>
+
+  <section class="pricing-cards-section section">
+    <div class="container">
+      <div class="pricing-grid">
+
+        <!-- FREEMIUM -->
+        <div class="pricing-card" id="cardFreemium">
+          <div class="pricing-card-header">
+            <div class="plan-icon plan-icon--free">🌱</div>
+            <h2 class="plan-name">Freemium</h2>
+            <p class="plan-tagline">Cocok untuk coba-coba</p>
+          </div>
+          <div class="plan-price-wrap">
+            <div class="plan-price"><span class="price-currency">Rp</span><span class="price-amount" data-monthly="0" data-yearly="0">0</span></div>
+            <span class="price-period">/bulan, selamanya</span>
+          </div>
+          <a href="login.html" class="btn btn-outline btn-full" id="ctaFreemium">Mulai Gratis</a>
+          <ul class="plan-features">
+            <li class="feat-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3ddc97" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 5 generate/bulan</li>
+            <li class="feat-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3ddc97" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Bahasa Indonesia</li>
+            <li class="feat-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3ddc97" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 3 pilihan tone</li>
+            <li class="feat-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3ddc97" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Panjang deskripsi standar</li>
+            <li class="feat-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3ddc97" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Riwayat tak terbatas</li>
+            <li class="feat-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3ddc97" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Salin teks</li>
+            <li class="feat-no"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Multi-bahasa</li>
+            <li class="feat-no"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Pilihan panjang deskripsi</li>
+            <li class="feat-no"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Skor SEO</li>
+          </ul>
+        </div>
+
+        <!-- PRO -->
+        <div class="pricing-card pricing-card--pro" id="cardPro" style="padding-top:3.5rem">
+          <div class="pro-popular-badge">⭐ Terpopuler</div>
+          <div class="pricing-card-header">
+            <div class="plan-icon plan-icon--pro">💎</div>
+            <h2 class="plan-name">Pro</h2>
+            <p class="plan-tagline">Untuk bisnis serius</p>
+          </div>
+          <div class="plan-price-wrap">
+            <div class="plan-price"><span class="price-currency">Rp</span><span class="price-amount" data-monthly="15000" data-yearly="144000">15.000</span></div>
+            <span class="price-period" id="periodPro">/bulan</span>
+          </div>
+          <button class="btn btn-primary btn-full" id="ctaPro" data-plan="pro">Pilih Pro — Best Value</button>
+          <ul class="plan-features">
+            <li class="feat-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3ddc97" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Generate tak terbatas</li>
+            <li class="feat-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3ddc97" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 3 bahasa (ID, EN, ZH)</li>
+            <li class="feat-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3ddc97" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 3 pilihan tone</li>
+            <li class="feat-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3ddc97" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Singkat / Standar / Panjang</li>
+            <li class="feat-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3ddc97" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Skor SEO</li>
+            <li class="feat-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3ddc97" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Riwayat tak terbatas</li>
+            <li class="feat-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3ddc97" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Salin teks</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="pricing-faq">
+        <h2 class="faq-title">Pertanyaan yang Sering Ditanya</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-q">Apakah paket Freemium benar-benar gratis? <span class="faq-arrow">›</span></button>
+            <div class="faq-a">Ya, 100% gratis selamanya. 5 generate per bulan tanpa kartu kredit, tanpa biaya tersembunyi.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">Bisa upgrade atau downgrade kapan saja? <span class="faq-arrow">›</span></button>
+            <div class="faq-a">Tentu! Kamu bisa ganti paket kapan saja. Perubahan berlaku di periode billing berikutnya.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">Metode pembayaran apa yang diterima? <span class="faq-arrow">›</span></button>
+            <div class="faq-a">Kami menerima QRIS, GoPay, ShopeePay, OVO, DANA, Virtual Account (BCA, BNI, BRI, Mandiri), Kartu Kredit/Debit Visa &amp; Mastercard, serta gerai retail (Alfamart/Indomaret).</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">Berapa lama masa aktif paket Pro? <span class="faq-arrow">›</span></button>
+            <div class="faq-a">Paket bulanan aktif 1 bulan, paket tahunan aktif 1 tahun sejak pembayaran dikonfirmasi. Perpanjangan dilakukan secara manual — cukup beli lagi sebelum paket habis.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">Apakah paket otomatis diperpanjang? <span class="faq-arrow">›</span></button>
+            <div class="faq-a">Tidak. Perpanjangan dilakukan secara manual — kamu cukup membeli paket lagi sebelum masa aktif habis. Kuota akan di-reset saat paket baru aktif.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top:none;padding-top:2rem">
+        <p>© 2026 DESTEC. Dibuat dengan ❤️ untuk UMKM Indonesia.</p>
+        <p class="footer-bottom-right">Versi 2.0 · Status: <span class="status-dot"></span> Semua sistem normal</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <script src="auth.js"></script>
+  <script src="main.js"></script>
+  <!-- Midtrans Snap loaded dynamically by main.js after reading config -->
+</body>
+</html>
