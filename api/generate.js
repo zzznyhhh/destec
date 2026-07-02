@@ -60,7 +60,7 @@ function calcSeoScore(text, productName, features) {
   return Math.min(score, 100);
 }
 
-module.exports = async (req, res) => {
+const handler = async (req, res) => {
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
   const user = await getUserFromRequest(req);
@@ -117,8 +117,8 @@ module.exports = async (req, res) => {
     if (geminiRes.status === 429) {
       return res.status(429).json({ error: 'rate_limit', message: 'Terlalu banyak permintaan, coba lagi sebentar.' });
     }
-    console.error('Gemini error:', errData);
-    return res.status(500).json({ error: 'gemini_error' });
+    console.error('Gemini error:', JSON.stringify(errData));
+    return res.status(500).json({ error: 'gemini_error', detail: errData });
   }
 
   const geminiData = await geminiRes.json();
@@ -155,3 +155,13 @@ module.exports = async (req, res) => {
     quotaLimit: profile.quota_limit
   });
 };
+
+handler.config = {
+  api: {
+    bodyParser: {
+      sizeLimit: '8mb'
+    }
+  }
+};
+
+module.exports = handler;
